@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package echo;
+
+option go_package = "echo";
+
+service Echo {
+  rpc GetData(stream GetDataRequest) returns (stream Data) {}
+}
+
+message GetDataRequest {
+  string payload = 1;
+}
+
+message Data {
+  string payload = 1;
+}
